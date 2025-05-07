@@ -12,8 +12,7 @@ int main() {
 
   fahr = lower;
 
-  printf(" F     C \n");
-  printf("__________\n");
+  printf("__F____C__\n");
   while (fahr <= upper) {
     celsius = (5.0 / 9.0) * (fahr - 32.0);
     printf("%3.0f %6.1f\n", fahr, celsius);
