@@ -1,9 +1,6 @@
 #include <stdio.h>
 
-/*
- * test block comment
- * / Test nested slash
- * */
+#define SINGLE_QUOTE 39 // ' ASCII code
 
 enum State {
   PROG,
@@ -15,10 +12,6 @@ enum State {
   LINE_COM,
 };
 
-// Test comment
-//
-// Another one
-
 int main()
 {
   char c;
@@ -27,17 +20,16 @@ int main()
   while ((c = getchar()) != EOF) {
     switch (state) {
     case PROG:
-      if (c == '\'')
+      if (c == SINGLE_QUOTE)
         state = CHAR;
       if (c == '"')
         state = STR;
       if (c == '/')
-        state = SLASH; // TEST same line comment
+        state = SLASH;
       break;
     case CHAR:
-      if (c == '\'')
+      if (c == SINGLE_QUOTE)
         state = PROG;
-      // TEST
       break;
     case STR:
       if (c == '"')
@@ -53,7 +45,6 @@ int main()
         putchar('/');
       }
       break;
-      /* ANOTHER TEST */
     case LINE_COM:
       if (c == '\n') {
         state = PROG;
