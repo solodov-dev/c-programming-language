@@ -20,13 +20,17 @@ int main()
   while (s > 0)
     s++;
 
-  printf("Char min: %d\n", s);
-  printf("Char max: %d\n", --s);
+  printf("Short min: %d\n", s);
+  printf("Short max: %d\n", --s);
 
-  long l = 1;
-  while (l > 0)
-    l++;
-
-  printf("Char min: %ld\n", l);
-  printf("Char max: %ld\n", --l);
+  /* This calculation takes a reaaaaally long time
+   *
+   * long l = 1;
+   * while (l > 0)
+   *   l++;
+   *
+   * printf("Long min: %ld\n", l);
+   * printf("Long max: %ld\n", --l);
+   *
+   */
 }
