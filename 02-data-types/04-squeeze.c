@@ -4,7 +4,8 @@ void squeeze(char s1[], char s2[]);
 
 int main()
 {
-  char s1[] = "This is a string of some chars";
+  char s1[] = "This is a string with some words. Let's remove vowels!";
+  printf("%s\n", s1);
   squeeze(s1, "ioae");
 }
 
