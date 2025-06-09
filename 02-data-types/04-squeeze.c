@@ -4,8 +4,8 @@ void squeeze(char s1[], char s2[]);
 
 int main()
 {
-  printf("Loop");
-  squeeze("abcdefg", "cd");
+  char s1[] = "This is a string of some chars";
+  squeeze(s1, "ioae");
 }
 
 void squeeze(char s1[], char s2[])
@@ -22,5 +22,7 @@ void squeeze(char s1[], char s2[])
       s1[j++] = s1[i];
   }
 
-  printf("%s", s1);
+  s1[j] = '\0';
+
+  printf("%s\n", s1);
 }
