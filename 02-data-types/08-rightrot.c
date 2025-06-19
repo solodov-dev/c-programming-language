@@ -9,7 +9,7 @@ unsigned short rightrot(unsigned short x, int n)
 {
   while (n--) {
     unsigned short bit = x & 1;
-    bit = bit << (sizeof(unsigned short) * 8 - 1);
+    bit <<= sizeof(unsigned short) * 8 - 1;
     x = bit | (x >> 1);
   };
 
