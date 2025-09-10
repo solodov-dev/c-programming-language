@@ -80,8 +80,28 @@ double pop(void)
   }
 }
 
+int peek(void)
+{
+  int n = pop();
+  push(n);
+  return n;
+}
+
+void clear(void) { sp = 0; }
+
+void duplicate(void) { push(peek()); }
+
+void swap(void)
+{
+  int a = pop();
+  int b = pop();
+  push(b);
+  push(a);
+}
+
 int getch(void);
 void ungetch(int);
+int peekch(void);
 
 int getop(char s[])
 {
@@ -92,16 +112,9 @@ int getop(char s[])
 
   s[1] = '\0';
 
-  if (!isdigit(c) && c != '.') {
-    if (c != '-')
+  if (!isdigit(c) && c != '.')
+    if (c != '-' || !isdigit(peekch()))
       return c;
-
-    int n = getch();
-    ungetch(n);
-
-    if (!isdigit(n))
-      return c; /* не число */
-  }
 
   i = 0;
 
@@ -134,4 +147,11 @@ void ungetch(int c)
     printf("ungetch: too many characters\n");
   else
     buf[bufp++] = c;
+}
+
+int peekch(void)
+{
+  int c = getch();
+  ungetch(c);
+  return c;
 }
