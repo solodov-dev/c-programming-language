@@ -1,34 +1,41 @@
 #include <assert.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 void test_reverse();
-void reverse(char s[], int len);
+void reverse(char s[]);
 
 int main() { test_reverse(); }
 
-void reverse(char s[], int len)
+void reverse(char s[])
 {
-  char temp;
+  char first, last;
 
-  for (int i = len - 1, j = 0; i > j; i--, j++) {
-    temp = s[i];
-    s[i] = s[j];
-    s[j] = temp;
-  }
+  int len = strlen(s);
 
-  s[len] = '\0';
+  if (len < 2)
+    return;
+
+  first = s[0];
+  last = s[len - 1];
+  s[len - 1] = '\0';
+
+  // array decay to pointer - later in the book
+  reverse(s + 1);
+
+  s[0] = last;
+  s[len - 1] = first;
 }
 
 void test_reverse()
 {
-  char s[100];
-  reverse("321", s);
-  assert(strcmp(s, "123") == 0);
-  reverse(123456, s);
-  assert(strcmp(s, "123456") == 0);
-  reverse(-2147483648, s);
-  assert(strcmp(s, "-2147483648") == 0);
-  printf("All 'reverse(int n, char s[])' tests has passed successfully\n");
+  char s1[] = "321";
+  reverse(s1);
+  assert(strcmp(s1, "123") == 0);
+
+  char s2[] = "abcde";
+  reverse(s2);
+  assert(strcmp(s2, "edcba") == 0);
+
+  printf("All 'reverse(char s[])' tests has passed successfully\n");
 }
