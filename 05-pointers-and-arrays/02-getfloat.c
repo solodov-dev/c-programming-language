@@ -5,23 +5,23 @@
 
 int getch(void);
 void ungetch(int);
-int getint(int *pn);
+double getfloat(double *pn);
 
 int main()
 {
-  int ret, c;
+  double ret, c;
 
-  if ((ret = getint(&c)) == 0)
+  if ((ret = getfloat(&c)) == 0)
     printf("Not a valid number\n");
   else if (ret > 0)
-    printf("Valid number: %d\n", c);
+    printf("Valid number: %f\n", c);
   else
     printf("End of file\n");
 
   return 0;
 }
 
-int getint(int *pn)
+double getfloat(double *pn)
 {
   int c, sign;
 
@@ -45,6 +45,13 @@ int getint(int *pn)
 
   for (*pn = 0; isdigit(c); c = getch())
     *pn = 10 * *pn + (c - '0');
+
+  if (c == '.') {
+    c = getch();
+
+    for (double fraction = 0.1; isdigit(c); c = getch(), fraction /= 10)
+      *pn = fraction * (c - '0') + *pn;
+  }
 
   *pn *= sign;
 
