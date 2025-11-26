@@ -32,5 +32,5 @@ void test_strend()
 
   assert(strend(s2, t2) == 0);
 
-  printf("All 'void scat(char *s, char *t)' tests has passed successfully\n");
+  printf("All 'strend(char *s, char *t)' tests has passed successfully\n");
 }

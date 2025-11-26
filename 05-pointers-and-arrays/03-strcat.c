@@ -22,5 +22,5 @@ void test_strend()
   strend(s, t);
 
   assert(strcmp(s, "Once upon a time."));
-  printf("All 'void scat(char *s, char *t)' tests has passed successfully\n");
+  printf("All 'scat(char *s, char *t)' tests has passed successfully\n");
 }
