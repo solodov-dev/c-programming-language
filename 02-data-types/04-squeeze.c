@@ -1,14 +1,5 @@
 #include <stdio.h>
 
-void squeeze(char s1[], char s2[]);
-
-int main()
-{
-  char s1[] = "This is a string with some words. Let's remove vowels!";
-  printf("%s\n", s1);
-  squeeze(s1, "ioae");
-}
-
 void squeeze(char s1[], char s2[])
 {
   int i, j, k;
@@ -26,4 +17,11 @@ void squeeze(char s1[], char s2[])
   s1[j] = '\0';
 
   printf("%s\n", s1);
+}
+
+int main()
+{
+  char s1[] = "This is a string with some words. Let's remove vowels!";
+  printf("%s\n", s1);
+  squeeze(s1, "ioae");
 }

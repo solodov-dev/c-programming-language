@@ -1,10 +1,5 @@
 #include <assert.h>
 #include <stdio.h>
-#include <string.h>
-
-void test_getline();
-
-int main() { test_getline(); }
 
 int get_line(char *s, int lim)
 {
@@ -22,7 +17,7 @@ int get_line(char *s, int lim)
   return i;
 }
 
-void test_getline()
+int main()
 {
   char line[100];
 

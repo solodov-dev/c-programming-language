@@ -2,11 +2,6 @@
 #include <stdio.h>
 #include <string.h>
 
-void test_reverse();
-void reverse(char s[]);
-
-int main() { test_reverse(); }
-
 void reverse(char s[])
 {
   char first, last;
@@ -27,7 +22,7 @@ void reverse(char s[])
   s[len - 1] = first;
 }
 
-void test_reverse()
+int main()
 {
   char s1[] = "321";
   reverse(s1);

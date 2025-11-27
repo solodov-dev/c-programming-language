@@ -1,10 +1,6 @@
 #include <assert.h>
 #include <stdio.h>
 
-void test_binsearch();
-
-int main() { test_binsearch(); }
-
 int binsearch(int x, int v[], int n)
 {
   int low, high, mid;
@@ -41,7 +37,7 @@ int binsearch2(int x, int v[], int n)
   return v[mid] == x ? mid : -1;
 }
 
-void test_binsearch()
+int main()
 {
   int v[] = {1, 2, 3, 4, 5, 6};
   assert(binsearch(3, v, 6) == 2);

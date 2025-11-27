@@ -2,11 +2,6 @@
 #include <stdio.h>
 #include <string.h>
 
-void test_strrindex();
-void reverse(char s[], int len);
-
-int main() { test_strrindex(); }
-
 int strrindex(char s[], char t[])
 {
   int i, j, k;
@@ -24,7 +19,7 @@ int strrindex(char s[], char t[])
   return -1;
 }
 
-void test_strrindex()
+int main()
 {
   assert(strrindex("abcdef", "def") == 3);
   assert(strrindex("abcdefalksjdf;akjf", "bcd") == 1);

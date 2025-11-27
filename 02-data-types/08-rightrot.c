@@ -1,10 +1,6 @@
 #include <assert.h>
 #include <stdio.h>
 
-void test_rightrot();
-
-int main() { test_rightrot(); }
-
 unsigned short rightrot(unsigned short x, int n)
 {
   while (n--) {
@@ -16,7 +12,7 @@ unsigned short rightrot(unsigned short x, int n)
   return x;
 }
 
-void test_rightrot()
+int main()
 {
   assert(rightrot(0b11100111, 3) == 0b1110000000011100);
   assert(rightrot(0b10100100, 6) == 0b1001000000000010);

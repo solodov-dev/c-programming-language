@@ -2,10 +2,6 @@
 #include <stdio.h>
 #include <string.h>
 
-void test_strend();
-
-int main() { test_strend(); }
-
 int strend(char *s, char *t)
 {
   if (strlen(t) > strlen(s))
@@ -20,7 +16,7 @@ int strend(char *s, char *t)
   return 1;
 }
 
-void test_strend()
+int main()
 {
   char *s = "one";
   char *t = "ne";

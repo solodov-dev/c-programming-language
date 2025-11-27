@@ -2,10 +2,6 @@
 #include <stdio.h>
 #include <string.h>
 
-void test_strend();
-
-int main() { test_strend(); }
-
 void strend(char *s, char *t)
 {
   while (*s++)
@@ -15,7 +11,7 @@ void strend(char *s, char *t)
     ;
 }
 
-void test_strend()
+int main()
 {
   char s[100] = "Once upon";
   char *t = " a time.";

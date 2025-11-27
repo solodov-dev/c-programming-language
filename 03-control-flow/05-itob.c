@@ -3,10 +3,20 @@
 #include <stdlib.h>
 #include <string.h>
 
-void test_itob();
+void itob(int n, char s[], int base);
 void reverse(char s[], int len);
 
-int main() { test_itob(); }
+int main()
+{
+  char s[100];
+  itob(34, s, 16);
+  assert(strcmp(s, "22") == 0);
+  itob(34, s, 2);
+  assert(strcmp(s, "100010") == 0);
+  itob(34, s, 8);
+  assert(strcmp(s, "42") == 0);
+  printf("All 'itob(int n, char s[])' tests has passed successfully\n");
+}
 
 void itob(int n, char s[], int base)
 {
@@ -39,16 +49,4 @@ void reverse(char s[], int len)
   }
 
   s[len] = '\0';
-}
-
-void test_itob()
-{
-  char s[100];
-  itob(34, s, 16);
-  assert(strcmp(s, "22") == 0);
-  itob(34, s, 2);
-  assert(strcmp(s, "100010") == 0);
-  itob(34, s, 8);
-  assert(strcmp(s, "42") == 0);
-  printf("All 'itob(int n, char s[])' tests has passed successfully\n");
 }

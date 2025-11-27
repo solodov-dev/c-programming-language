@@ -2,10 +2,6 @@
 #include <stdio.h>
 #include <string.h>
 
-void test_escape();
-
-int main() { test_escape(); }
-
 void escape(char s[], char t[])
 {
   int i, j;
@@ -28,7 +24,7 @@ void escape(char s[], char t[])
   s[j] = '\0';
 }
 
-void test_escape()
+int main()
 {
   char t[100] = "This is a \tTAB test and \n a newline test";
   char s[100] = "Before test";

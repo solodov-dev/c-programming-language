@@ -2,10 +2,6 @@
 #include <stdio.h>
 #include <string.h>
 
-void test_expand();
-
-int main() { test_expand(); }
-
 void expand(char s1[], char s2[])
 {
   int i = 0;
@@ -38,7 +34,7 @@ void assert_expand(char init[], char want[])
   assert(strcmp(s, want) == 0);
 }
 
-void test_expand()
+int main()
 {
   assert_expand("a-z", "abcdefghijklmnopqrstuvwxyz");
   assert_expand("-a-z", "-abcdefghijklmnopqrstuvwxyz");

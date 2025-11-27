@@ -2,10 +2,6 @@
 #include <ctype.h>
 #include <stdio.h>
 
-void test_atof();
-
-int main() { test_atof(); }
-
 double atof(char s[])
 {
   double val, power;
@@ -55,7 +51,7 @@ double atof(char s[])
   return sign * val / power;
 }
 
-void test_atof()
+int main()
 {
   assert(atof("10.0") == 10.0);
   assert(atof("10123.123") == 10123.123);

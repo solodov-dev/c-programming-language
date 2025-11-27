@@ -2,10 +2,6 @@
 #include <stdio.h>
 #include <string.h>
 
-void test_strncmp();
-
-int main() { test_strncmp(); }
-
 void strn_cat(char *dst, char *src, int n)
 {
   while (*dst++)
@@ -19,7 +15,7 @@ void strn_cat(char *dst, char *src, int n)
   *dst = '\0';
 }
 
-void test_strncmp()
+int main()
 {
   char dst[100] = "Destination";
   char *src = "Source";
